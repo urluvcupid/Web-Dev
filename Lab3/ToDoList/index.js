@@ -33,7 +33,7 @@ function saveData(){
     localStorage.setItem("data", listTask.innerHTML)
 }
 function showTask(){
-    listTask.innerHTML = localStorage.getItem("data") || "";
+    listTask.innerHTML = localStorage.getItem("data");
 }
 showTask();
 
