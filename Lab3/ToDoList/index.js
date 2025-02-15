@@ -12,7 +12,7 @@ function addTask(){
                 <input type = "checkbox">
                 <span class = "task-text">${inputBox.value}</span>
                 <button class= "delete_btn">🗑</button>`
-                listTask.prepend(li);
+                listTask.appendChild(li);
     }
     inputBox.value="";
     saveData();
@@ -35,11 +35,11 @@ function saveData(){
 function showTask(){
     listTask.innerHTML = localStorage.getItem("data");
 }
-// showTask();
-
-
-deleteAllBtn.addEventListener("click", function() {
-    listTask.innerHTML = ""; 
-    saveData();
-});
 showTask();
+
+
+// deleteAllBtn.addEventListener("click", function() {
+//     listTask.innerHTML = ""; 
+//     saveData();
+// });
+// showTask();
