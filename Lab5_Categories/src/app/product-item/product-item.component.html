@@ -1,0 +1,23 @@
+<!-- src/app/products/products.component.html -->
+<div class="product-card">
+    <a [href]="product.link" target="_blank">
+      <img [src]="product.image"  class="main-image">
+    </a>
+
+    <h2>{{ product.name }}</h2>
+    <p>{{ product.description }}</p>
+    <p><strong>Likes:</strong> {{ product.likes }}</p>
+
+    <!-- Optional Product Image Gallery -->
+    <div class="gallery">
+      <div class="gallery-item"  *ngFor="let img of product.gallery">
+        <img [src]="img" (click) = "On(img)" >
+      </div>
+    </div>
+
+    <!-- Share buttons -->
+    <div class="share-buttons">
+      <button (click)="like()" style="background-color: rgb(238, 144, 144);">Like 👍</button>
+      <button (click)="remove()">Remove 🗑️</button>
+    </div>
+  </div>

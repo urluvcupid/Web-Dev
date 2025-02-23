@@ -159,14 +159,12 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  // Share via WhatsApp: opens WhatsApp with the product link
   shareViaWhatsApp(product: Product): void {
     const url = `https://wa.me/?text=${product.link}`;
     window.open(url);
     console.log(product);
   }
 
-  // Share via Telegram: opens Telegram with the product link and name
   shareViaTelegram(product: Product): void {
     const url = `https://t.me/share/url?url=${product.link}&text=${product.name}`;
     window.open(url);

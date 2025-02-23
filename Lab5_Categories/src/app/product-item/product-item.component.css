@@ -1,19 +1,14 @@
+/* src/app/products/products.component.css */
 
-.products-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 30px;
-  }
-  
-  .product-card {
+ 
+.product-card {
     border: 1px solid #ddd;
     border-radius: 8px;
     width: 300px;
     margin: 15px;
     padding: 15px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    background-color: #ffffff;
+    background-color: #fff;
   }
   
   .product-card h2 {
@@ -37,17 +32,18 @@
     display: flex;
     gap: 5px;
     margin-top: 10px;
+    justify-content: space-between;
   }
   
   .gallery-item img {
-    width: 80px;
+    width: 50px;
     height: 80px;
     object-fit: scale-down;
     border-radius: 4px;
   }
 
   img.gallery-item{
-    width: 80px;
+    width: 50px;
     height: 80px;
     object-fit: cover;
     border-radius: 4px;
@@ -59,7 +55,7 @@
     margin-top: 10px;
   }
   
-  .tgbutton {
+  .share-buttons button {
     background-color: #007bff;
     border: none;
     padding: 8px 8px;
@@ -69,21 +65,7 @@
     transition: background-color 0.3s;
   }
   
-  .tgbutton:hover{
+  .share-buttons button:hover {
     background-color: #0056b3;
   }
-  .wpbutton {
-    background-color: lightgreen;
-    border: none;
-    padding: 8px 8px;
-    color: white;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-
-  .wpbutton:hover{
-    background-color: rgb(0, 210, 0);
-  }
-
   

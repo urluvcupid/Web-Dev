@@ -1,0 +1,27 @@
+
+<div class="main">
+  <div class="nav_bar">
+      <div class="d-flex flex-column flex-shrink-0 p-3 bg-light slidebar" style="width: 280px; height: 1000%">
+          <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+            <span class="fs-4">Smartphones</span>
+          </a>
+          <hr>
+          <ul class="nav nav-pills flex-column mb-auto">
+              <li class="nav-item" *ngFor="let c of categories"
+              (click)="selectCategory(c)">
+                  <a
+                  class="list-group-item"
+                  routerLink="/"
+                  [queryParams] = "{category: c}"
+                  >{{ c }}</a>
+              </li>
+          </ul>
+      </div>
+  </div>
+  <router-outlet></router-outlet>
+  <div class="products">
+    <app-header [products] = "selectedProducts" 
+      (removed)="removeProduct($event)"></app-header>
+  </div>
+</div>
