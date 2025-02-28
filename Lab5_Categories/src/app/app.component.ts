@@ -1,19 +1,25 @@
-import { Params } from './../../node_modules/@types/express-serve-static-core/index.d';
-import { Component, OnInit } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+// those imports are the system 
+import { Component, OnInit } from '@angular/core'; //  базовые элементы Angular для создания компонента и обработки событий при его инициализации.
+import { RouterLink, RouterOutlet } from '@angular/router'; //link - позволяет изменять URL при клике на категорию./ 
+                                                            //outlet - указывает место на странице, куда будет вставляться содержимое текущего маршрута.
+import { CommonModule } from '@angular/common'; // стандартные функции Angular (например, ngIf, ngFor).
+import { ActivatedRoute } from '@angular/router'; // нужен для работы с параметрами URL
+
+// those imports are classes from header and product-item component
 import { HeaderComponent } from './header/header.component';
-import { CommonModule } from '@angular/common';
 import { ProductItemComponent } from './product-item/product-item.component';
-import { RouterModule } from '@angular/router';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, CommonModule, ProductItemComponent, RouterLink],
+  selector: 'app-root', //селектор нужен для того чтобы я мог показывать это в html файле (необяз в апп компненте)
+  imports: [RouterOutlet, HeaderComponent, CommonModule, ProductItemComponent, RouterLink], 
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
+
 export class AppComponent implements OnInit {
+
+
+  //Внутри класса могут быть некие переменные 
   categories = ['Apple', 'Samsung', 'Xiaomi', 'Google'];
 
   products: {
@@ -35,12 +41,11 @@ export class AppComponent implements OnInit {
   selectedProducts: any[] = [];
 
 
-  // In app.component.ts, add:
   
+  // А также Нные методы/функции
 
-  // Sets the currently selected category
+  selectCategory(category: string) : void{   // Sets the currently selected category
 
-  selectCategory(category: string) : void{
     this.selectedCategory = category;
     this.selectedProducts= this.products.filter((product) => product.category === category);
     console.log(this.selectedProducts, this.selectedCategory);
@@ -56,7 +61,7 @@ export class AppComponent implements OnInit {
     console.log('app.removeProduct worked success');
   }
 
-
+  // Конструктор используется для инициализации данных или подключения зависимостей
   constructor(private route: ActivatedRoute) {
     this.products = [
       {
@@ -327,6 +332,9 @@ export class AppComponent implements OnInit {
     ];
     
   }
+
+  // Angular-компоненты имеют специальные методы-хуки
+  //Один из них – ngOnInit(), который вызывается после создания компонента
   ngOnInit(): void {
       
   }

@@ -16,12 +16,14 @@
                   [queryParams] = "{category: c}"
                   >{{ c }}</a>
               </li>
-          </ul>
+          </ul> 
       </div>
   </div>
   <router-outlet></router-outlet>
   <div class="products">
-    <app-header [products] = "selectedProducts" 
+
+    <!-- Я тот шаблон products передал в header именно в этой строчке -->
+    <app-header [products] = "selectedProducts"    
       (removed)="removeProduct($event)"></app-header>
   </div>
 </div>

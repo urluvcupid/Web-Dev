@@ -1,8 +1,13 @@
 <div class="products-container">
     <div *ngFor="let product of products">
+      
+
+
+      <!-- Здесь я передаю список products в компнент product-item и присваиваю значение "product" -->
       <app-product-item
         [product]="product"
         (removed)="removeProduct($event)"
       ></app-product-item>
+
     </div>
   </div>

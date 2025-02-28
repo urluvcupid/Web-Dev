@@ -1,6 +1,5 @@
 import { Component, Input, Output, EventEmitter} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
 
 
 @Component({
@@ -10,7 +9,7 @@ import { RouterModule } from '@angular/router';
   styleUrl: './product-item.component.css'
 })
 export class ProductItemComponent {
-  @Input() product: any;
+  @Input() product: any;   //Также как я принимал от апп в хедер, здесь точно также я принимаю от хедера в продакт айтемс.
   @Output() removed = new EventEmitter<any>();
 
   like(){
@@ -22,7 +21,6 @@ export class ProductItemComponent {
     else{
       this.product.likes -=1;
       this.product.isLiked = false;
-
     }
 
   }

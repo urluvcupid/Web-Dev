@@ -1,9 +1,6 @@
-import { NgFor, CommonModule } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { Component, Input, Output, EventEmitter, input} from '@angular/core';
 import { ProductItemComponent } from '../product-item/product-item.component';
-import { RouterModule } from '@angular/router';
-import { ActivatedRoute } from '@angular/router';
-
 
 
 @Component({
@@ -12,8 +9,10 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
+
 export class HeaderComponent{
-    @Input() products: any[] = [];
+    @Input() products: any[] = [];      //Здесь я получил данные продактс отт appcomponent
+                                      //Теперь products в HeaderComponent содержит те же данные, что были в products в AppComponent.
     @Output() removed = new EventEmitter<any>();
 
  
