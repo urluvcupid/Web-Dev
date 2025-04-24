@@ -8,7 +8,7 @@ class Company(models.Model):
     address = models.TextField()
 
     def __str__(self):
-        return self.name
+        return self.name 
 
 class Vacancy(models.Model):
     name = models.CharField(max_length=255)
